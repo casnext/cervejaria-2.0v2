@@ -43,7 +43,7 @@
 
     /* Estilo para o card */
     .card {
-      width: 1300px;
+      width: 1200px;
       padding: 20px;
       background-color: #ffffff;
       border-radius: 10px;
@@ -107,67 +107,9 @@
 
     .container-fluid{
       width: 100%
+
     }
-
-    .button-custom {
-    padding: 10px 20px;
-    background-color: #f40000;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.button-custom2 {
-    padding: 10px 20px;
-    background-color: #089400;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.button-custom3 {
-    padding: 10px 20px;
-    background-color: #0d9e25;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
    
-.botoes-alinhados {
-    display: inline-block;
-    padding: 5px 10px;
-    background-color: #f2f2f2;
-    color: #333;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.botoes-alinhados-transf {
-    display: inline-block;
-    padding: 5px 10px;
-    background-color: #019108;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.botoes-alinhados-para {
-    display: inline-block;
-    padding: 5px 10px;
-    background-color: #d90808;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.table th, .table td {
-    border: 1px solid #ccc;
-    padding: 8px;
-    text-align: center;
-}
 
   </style>
 
@@ -254,51 +196,39 @@
    <!-- RODAPE USUARIO -->
     <div class="sidebar_profile flex">
       <span class="nav_image">
-        <img src="images/profile.jpeg" alt="logo_img" />
+        <img src="images/profile.png" alt="logo_img" />
       </span>
       <div class="data_text">
-        <span class="email">victor@motion.com</span>
+        <span class="email"><?php echo $_SESSION["usuario"]["email"]?></span>
       </div>
     </div>
   </div>
 </nav>
-      </div>
       
     </nav>
 
-    <nav class="navbar flex">
-      <i class="bx bx-menu" id="sidebar-open"></i>
-      <input type="text" placeholder="Buscar..." class="search_box" />
-      <div>
-        <button class="button">Pesquisar</button>
-      </div>
-    </nav>
-    
     <!-- Cabeçalho -->
     <div>
-      <h1 class="display-2">Acompanhar Processo</h1>
+      <h1 class="display-2">Controle de Produção</h1>
       <div class="card">
         <div class="container">
           <div class="row">
             <div class="col  m-2">
-              <h2>Etapas de criação</h2>
+              <h2>Exemplo de Tabela</h2>
+            </div>
+            <div class="col m-2">
+              <button class="button">Botão</button>
             </div>
           </div>
-
+        </div>
         <table class="table">
           <thead>
             <tr>
-              <th>OP. Nº</th>
-              <th>Maltagem</th>
-              <th>Moagem</th>
-              <th>Brassagem</th>
-              <th>Filtração</th>
-              <th>Fervura</th>
-              <th>Clarificação</th>
-              <th>Engarrafamento</th>
-              <th>Finalização</th>
-              <th></th>
-              <th></th>
+              <th>Produto</th>
+              <th>Validade</th>
+              <th>Quantidade</th>
+              <th>Preço</th>
+              <th>Marca</th>
             </tr>
           </thead>
           <tbody>
@@ -308,13 +238,6 @@
               <td>Dado 3</td>
               <td>Dado 4</td>
               <td>Dado 5</td>
-              <td>Dado 6</td>
-              <td>Dado 7</td>
-              <td>Dado 8</td>
-              <td>Dado 9</td>
-              <td><button class="button-custom">Parar</button></td>
-              <td><button class="button-custom2" onclick="window.location.href='/cervejaria/transferencia-de-producao/'">Avançar</button></td>
-              
             </tr>
           </tbody>
         </table>

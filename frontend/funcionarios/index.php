@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +9,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Menu Principal</title>
+  <title>Controle de Produção</title>
   <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
   <link rel="stylesheet" href="style.css" />
   <link flex href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
@@ -14,19 +18,18 @@
 </head>
 
 <style>
-
-  .mr-2 {}
-
-  .card2 {
-    transition: transform 0.3s ease;
+  .table th,
+  .table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
   }
 
-  .card2:hover {
-    transform: scale(1.1);
-  }
-
-  .card2 {
-    cursor: pointer;
+  .table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+    background-color: #ffffff;
   }
 
   .card-custom {
@@ -35,45 +38,6 @@
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  .card-custom {
-    display: inline-block;
-    width: 32.7%;
-    height: 518px;
-    padding: 5px 10px;
-    background-color: #f2f2f2;
-    color: #333;
-    text-decoration: none;
-    border-radius: 5px;
-  }
-
-  .card2 {
-    display: inline-block;
-    width: 33%;
-    background-color: rgba(251, 251, 253, .92);
-    ;
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  .card2 img {
-    width: 100%;
-    border-radius: 5px;
-  }
-
-  .card2-content {
-    margin-top: 10px;
-  }
-
-  .card2-content h2 {
-    font-size: 18px;
-    margin-bottom: 5px;
-  }
-
-  .card2-content p {
-    font-size: 14px;
   }
 </style>
 
@@ -159,91 +123,75 @@
       <!-- RODAPE USUARIO -->
       <div class="sidebar_profile flex">
         <span class="nav_image">
-          <img src="images/profile.jpeg" alt="logo_img" />
+          <img src="images/profile.png" alt="logo_img" />
         </span>
         <div class="data_text">
-          <span class="email">victor@motion.com</span>
+          <span class="email"><?php echo $_SESSION["usuario"]["email"]?></span>
         </div>
       </div>
     </div>
   </nav>
   </div>
-  </nav>
-  </div>
-  </nav>
-
   <nav class="navbar flex">
     <i class="bx bx-menu" id="sidebar-open"></i>
+    <input type="text" placeholder="Buscar..." class="search_box" />
+    <div>
+      <button class="button">Pesquisar</button>
+    </div>
   </nav>
 
   <!-- Site -->
   <div>
-    <h1 class="display-2">Como fazer cerveja?</h1>
+    <h1 class="display-2">Controle de Colaboradores</h1>
     <div class="card">
       <div class="col">
         <div class="row">
-          <div class="col  m-2">
-            <div class="card2" onclick="abrirModal()">
-              <h1>Tadicional</h1>
-              <h3>Cerveja pilsen</h3>
-              <img src="/menu/images/card10.jpg" alt="Descrição da imagem">
-            </div>
-           
-            <div class="card2" onclick="abrirModal1()">
-              <h1>Artesanal</h1>
-              <h3>Levedura de milho</h3>
-              <img src="/menu/images/card11.jpg" alt="Descrição da imagem">
-            </div>
-            
-            <div class="card2" onclick="abrirModal2()">
-              <h1>Não alcoolica</h1>
-              <h3>Fermentando o milho</h3>
-              <img src="/menu/images/card12.jpg" alt="Descrição da imagem">
-            </div>
-          </div>
-          
-          <h2 class="mr-2">Selecione qual categoria de cerveja deseja aprender</h2>
+          <h2 class="mr-2">Cadastros de colaboradores</h2>
         </div>
+      </div>
+      <div class="col m-3">
+        <button class="button" onclick="window.location.href='/cervejaria/cadastro-de-funcionarios/'">Cadastrar
+          +</button>
       </div>
     </div>
 
-    <script>
-      function redirecionarParaPagina(url) {
-        window.location.href = url;
-      }
-    </script>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Sobernome</th>
+          <th>Cpf/Cnpj</th>
+          <th>Data</th>
+          <th>Tipo</th>
+          <th>Endereço</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pagination">
+      <ul>
+        <li><a href="#" class="active">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+      </ul>
+    </div>
+  </div>
+  </div>
 
-    <!--<div class="modal" id="modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Cerveja Tradicional</h5>
-          <button type="button" class="close" onclick="fecharModal()">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p>Cerveja pilsen</p>
-          <p>Ingredientes: Água, malte de cevada, lúpulo e levedura</p>
-          <p>Temperatura de fermentação: 10ºC</p>
-          <p>Tempo de fermentação: 7 dias</p>
-          <p>Tempo de maturação: 14 dias</p>
-          <p>Tempo de envase: 1 dia</p>
-          <p>Tempo de pasteurização: 1 dia</p>
-          <p>Tempo de resfriamento: 1 dia</p>
-          <p>Tempo de rotulagem: 1 dia</p>
-          <p>Tempo de embalagem: 1 dia</p>
-          <p>Tempo de armazenamento: 1 dia</p>
-          <p>Tempo de distribuição: 1 dia</p>
-          <p>Tempo de venda: 1 dia</p>
-          <p>Tempo de consumo: 1 dia</p>
-          <p>Tempo de descarte: 1 dia</p>
-          <p>Tempo total: 32 dias</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" onclick="fecharModal()">Fechar</button>
-          <button type="button" class="btn btn-primary" onclick="redirecionarParaPagina('/iniciar-producao/criar-cerveja.php')">Iniciar</button>
-        </div>
-      </div>-->
+  <table class="table">
+    <!-- Conteúdo da tabela -->
+  </table>
 
 </body>
 

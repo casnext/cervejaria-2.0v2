@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -98,8 +101,6 @@
       width: 100%;
       border-collapse: collapse;
       margin-top: 30px;
-      border-radius: 2px;
-
     }
 
     .table th,
@@ -186,7 +187,7 @@
 }
 .button-custom2 {
     padding: 10px 20px;
-    background-color: #089400;
+    background-color: #31c41d;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -276,10 +277,10 @@
        <!-- RODAPE USUARIO -->
         <div class="sidebar_profile flex">
           <span class="nav_image">
-            <img src="images/profile.jpeg" alt="logo_img" />
+            <img src="images/profile.png" alt="logo_img" />
           </span>
           <div class="data_text">
-            <span class="email">victor@motion.com</span>
+            <span class="email"><?php echo $_SESSION["usuario"]["email"]?></span>
           </div>
         </div>
       </div>
@@ -298,12 +299,12 @@
     
     <!-- Cabeçalho -->
     <div>
-      <h1 class="display-2">Ordem de Produção</h1>
+      <h1 class="display-2">Controle de Estoque</h1>
       <div class="card">
         <div class="container">
           <div class="row">
             <div class="col  m-2">
-              <h2>Informções da cerveja produzida</h2>
+              <h2>Produto finalizado</h2>
             </div>
           </div>
 
@@ -311,11 +312,9 @@
           <thead>
             <tr>
               <th>OP. Nº</th>
-              <th>Data</th>
-              <th>Quantidade</th>
               <th>Tipo</th>
-              <th>Status</th>
-              <th></th>
+              <th>Data Finalização</th>
+              <th>Quantidade</th>
             </tr>
           </thead>
           <tbody>
@@ -324,8 +323,6 @@
               <td>Dado 2</td>
               <td>Dado 3</td>
               <td>Dado 4</td>
-              <td>Dado 5</td>
-              <td><button class="button-custom2" onclick="openModal()">Atualizar</button></td>
             </tr>
           </tbody>
         </table>
@@ -352,15 +349,23 @@
       <span class="close" onclick="closeModal()">&times;</span>
       <h2>Atualizar </h2>
       <form id="updateForm">
-        
+        <div class="form-input">
+          <input type="text" id="opNumber" name="opNumber"placeholder="OP. Nº:">
+        </div>
         <div class="form-input">
           <input type="number" id="quantity" name="quantity" placeholder="Quantidade:">
+        </div>
+        <div class="form-input">
+          <input type="date" id="deliveryDate" name="deliveryDate" placeholder="Previsão de entrega:">
+        </div>
+        <div class="form-input">
+          <input type="text" id="priority" name="priority" placeholder="Prioridade:">
         </div>
         <div class="form-input">
           <input type="text" id="type" name="type" placeholder="Tipo:">
         </div>
         <div class="form-input">
-          <input type="text" id="type" name="type" placeholder="Status">
+          <input type="date" id="startDate" name="startDate" placeholder="Data de início:">
         </div>
       
         <button class="button-custom" type="submit">Atualizar</button>

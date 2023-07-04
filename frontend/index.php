@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-	
+
 <head>
-<meta charset="utf-8">
-<title>Sistema Motions'Beer</title>
-<link rel="shortcut icon" type="image/x-icon" href="./imagens/favicon.ico">
-<link rel="stylesheet" type="text/css" href="css/estilo.css">
+	<meta charset="utf-8">
+	<title>Sistema Motions'Beer</title>
+	<link rel="shortcut icon" type="image/x-icon" href="./imagens/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 </head>
 
 <style>
 	body {
 		background: url(./imagens/Cervejaria.jpg)no-repeat;
+	}
+
+	.custom-message-container {
+		text-align: center;
+		padding: 10px;
+		color: red;
+		background-color: rgb(254, 136, 136);
+		border-radius: 8px;
 	}
 
 	@media (max-width: 980px) {
@@ -92,6 +100,8 @@
 			color: #000;
 		}
 
+
+
 		body {
 			background: url(./imagens/Cervejaria.jpg) no-repeat;
 			background-position: center center;
@@ -110,9 +120,18 @@
 		</h1>
 
 		<form method="post" action="autenticacao.php">
+			<?php if (isset($_SESSION["login_status"]) && $_SESSION["login_status"] === "error"): ?>
+				<?php if (isset($_SESSION["mensagem"])): ?>
+					<div class="custom-message-container">
+						<script>
+							alert("<?php echo $_SESSION['mensagem']; ?>");
+						</script>
+					</div>
+				<?php endif ?>
+			<?php endif ?>
 			<input type="text" name="login" id="login" placeholder="Digite seu login" required>
 			<input type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
-			<input type="submit" name="" value="Logar">
+			<input type="submit" name="" value="Entrar">
 			<center>
 				<p><u><a href="/esqueci.html">Cadastrar</a></u></p>
 			</center>

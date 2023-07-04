@@ -134,25 +134,6 @@
     box-sizing: border-box;
     margin-bottom: 10px;
   }
-
-  .form-control1 {
-    width: 500px;
-    height: 100px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-  }
-
-  .form-select {
-    width: 500px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-  }
   </style>
 
   <body>
@@ -236,10 +217,10 @@
        <!-- RODAPE USUARIO -->
         <div class="sidebar_profile flex">
           <span class="nav_image">
-            <img src="images/profile.jpeg" alt="logo_img" />
+            <img src="images/profile.png" alt="logo_img" />
           </span>
           <div class="data_text">
-            <span class="email">victor@motion.com</span>
+            <span class="email"><?php echo $_SESSION["usuario"]["email"]?></span>
           </div>
         </div>
       </div>
@@ -248,41 +229,27 @@
     </nav>
     <!-- Cabeçalho -->
     <div>
-      <h1 class="display-2">Controle de vendas </h1>
+      <h1 class="display-2">Controle de Funcionários</h1>
       <div class="card">
         <div class="container">
           <div class="row">
             <div class="col  m-2">
-              <h2>Cadastro de Vendas</h2>
+              <h2>Cadastro de Funcionários</h2>
             </div>
               <div class="mb-5">
-                <input type="text" class="form-control" value="" id="exampleFormControlInput1" placeholder="Nome do Cliente">
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Digite o Nome">
               </div>
               <div class="mb-3">
-                <input type="number" class="form-control" value="" id="exampleFormControlInput1" placeholder="Digite seu Cpf/Cnpj">
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
               </div>
-              <div class="mb-5">
-                <input type="number" class="form-control" value="" id="exampleFormControlInput1" placeholder="Digite o quantidade de engradados">
+              <div class="mb-3">
+                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Digite seu CPF... 00000000000">
               </div>
-              <div class="mb-5">
-                <input type="text" class="form-control" value="" id="exampleFormControlInput1" placeholder="Valor" readonly>
+              <div class="mb-3">
+                <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Senha">
               </div>
-            
-              <div class="mb-5">
-                <div class="col m-2">
-                  <select class="form-select">
-                    <option selected>Selecione Categoria</option>
-                    <option value="opcao1">PILSEN(300ML)</option>
-                    <option value="opcao2">DUPLO MALTE(300ML)</option>
-                    <option value="opcao3">SEM ALCOOL(300ML)</option>
-                    <option value="opcao1">PILSEN(550ML)</option>
-                    <option value="opcao2">DUPLO MALTE(550ML)</option>
-                    <option value="opcao3">SEM ALCOOL(550ML)</option>
-                  </select>
-                </div>
-              </div>
-              <div class="mb-5">
-                <input type="text" class="form-control1" id="exampleFormControlInput1" placeholder="Observação">
+              <div class="mb-3">
+                <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Confirme sua Senha">
               </div>
           </div>
         </div>

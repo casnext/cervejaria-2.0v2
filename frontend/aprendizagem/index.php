@@ -14,13 +14,9 @@
 </head>
 
 <style>
-  .card3 {
-    width: 100%;
-    padding: 20px;
-    background-color: rgba(251, 251, 253, .92);
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+
+  .mr-2 {}
+
   .card2 {
     transition: transform 0.3s ease;
   }
@@ -28,7 +24,6 @@
   .card2:hover {
     transform: scale(1.1);
   }
-
 
   .card2 {
     cursor: pointer;
@@ -164,13 +159,17 @@
       <!-- RODAPE USUARIO -->
       <div class="sidebar_profile flex">
         <span class="nav_image">
-          <img src="images/profile.jpeg" alt="logo_img" />
+          <img src="images/profile.png" alt="logo_img" />
         </span>
         <div class="data_text">
-          <span class="email">victor@motion.com</span>
+          <span class="email"><?php echo $_SESSION["usuario"]["email"]?></span>
         </div>
       </div>
     </div>
+  </nav>
+  </div>
+  </nav>
+  </div>
   </nav>
 
   <nav class="navbar flex">
@@ -179,46 +178,73 @@
 
   <!-- Site -->
   <div>
-    <h1 class="display-2">Seja bem Vindo Usuario</h1>
+    <h1 class="display-2">Como fazer cerveja?</h1>
     <div class="card">
-      <div class="card2">
-        <div class="card2-content" onclick="redirecionarParaPagina('/iniciar-producao/')">
-          <img src="/menu/images/card6.jpg" alt="Descrição da imagem">
-          <h2>Começar a Arte!</h2>
-          <p>Clique no car e começe a produzir cerveja agora mesmo</p>
-        </div>
-      </div>
-      <div class="card2">
-        <div class="card2-content" onclick="redirecionarParaPagina('/aprendizagem/')">
-          <img src="/menu/images/card4.jpg" alt="Descrição da imagem">
-          <h2>Mestre Cervejeiro</h2>
-          <p>Aprenda todos os truques para a produção de cerveja de qualidade</p>
-        </div>
-      </div>
-      <div class="card2">
-        <div class="card2-content" onclick="redirecionarParaPagina('/sobre-nos/')">
-          <img src="/menu/images/card7.jpg" alt="Descrição da imagem">
-          <h2>Sobre Nós</h2>
-          <p>Informação os desenvolvedores amantes do nectar dos Vikings</p>
-        </div>
-      </div>
       <div class="col">
         <div class="row">
           <div class="col  m-2">
-            <div class="card3">
-              <div class="card-body">
-                <h4 class="card-title">Cervejas em Produção</h4>
-                <p class="card-text">Acompanhe o processo das cervejas em produção</p>
-                <a href="/pesquisa-producao/" class="btn btn-primary">Acompanhar</a>
-              </div>
+            <div class="card2" onclick="abrirModal()">
+              <h1>Tadicional</h1>
+              <h3>Cerveja pilsen</h3>
+              <img src="/menu/images/card10.jpg" alt="Descrição da imagem">
+            </div>
+           
+            <div class="card2" onclick="abrirModal1()">
+              <h1>Artesanal</h1>
+              <h3>Levedura de milho</h3>
+              <img src="/menu/images/card11.jpg" alt="Descrição da imagem">
+            </div>
+            
+            <div class="card2" onclick="abrirModal2()">
+              <h1>Não alcoolica</h1>
+              <h3>Fermentando o milho</h3>
+              <img src="/menu/images/card12.jpg" alt="Descrição da imagem">
             </div>
           </div>
+          
+          <h2 class="mr-2">Selecione qual categoria de cerveja deseja aprender</h2>
         </div>
       </div>
-      <script>
-        function redirecionarParaPagina(url) {
-          window.location.href = url;
-        }
-      </script>
+    </div>
+
+    <script>
+      function redirecionarParaPagina(url) {
+        window.location.href = url;
+      }
+    </script>
+
+    <!--<div class="modal" id="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Cerveja Tradicional</h5>
+          <button type="button" class="close" onclick="fecharModal()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Cerveja pilsen</p>
+          <p>Ingredientes: Água, malte de cevada, lúpulo e levedura</p>
+          <p>Temperatura de fermentação: 10ºC</p>
+          <p>Tempo de fermentação: 7 dias</p>
+          <p>Tempo de maturação: 14 dias</p>
+          <p>Tempo de envase: 1 dia</p>
+          <p>Tempo de pasteurização: 1 dia</p>
+          <p>Tempo de resfriamento: 1 dia</p>
+          <p>Tempo de rotulagem: 1 dia</p>
+          <p>Tempo de embalagem: 1 dia</p>
+          <p>Tempo de armazenamento: 1 dia</p>
+          <p>Tempo de distribuição: 1 dia</p>
+          <p>Tempo de venda: 1 dia</p>
+          <p>Tempo de consumo: 1 dia</p>
+          <p>Tempo de descarte: 1 dia</p>
+          <p>Tempo total: 32 dias</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="fecharModal()">Fechar</button>
+          <button type="button" class="btn btn-primary" onclick="redirecionarParaPagina('/iniciar-producao/criar-cerveja.php')">Iniciar</button>
+        </div>
+      </div>-->
+
 </body>
+
 </html>

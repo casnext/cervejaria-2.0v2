@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -118,10 +121,10 @@
       <!-- RODAPE USUARIO -->
       <div class="sidebar_profile flex">
         <span class="nav_image">
-          <img src="images/profile.jpeg" alt="logo_img" />
+          <img src="images/profile.png" alt="logo_img" />
         </span>
         <div class="data_text">
-          <span class="email">victor@motion.com</span>
+          <span class="email"><?php echo $_SESSION["usuario"]["email"]?></span>
         </div>
       </div>
     </div>

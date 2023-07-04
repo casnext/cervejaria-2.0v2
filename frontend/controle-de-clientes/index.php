@@ -14,19 +14,6 @@
   </head>
 
   <style>
-    .table th, .table td {
-    border: 1px solid #ccc;
-    padding: 8px;
-    text-align: center;
-}
- .table td {
-    border: 1px solid #ccc;
-    padding: 8px;
-    text-align: center;
-    background-color: #ffffff;
-}
-
-
     .card-custom {
     width: 200px;
     padding: 20px;
@@ -118,34 +105,28 @@
        <!-- RODAPE USUARIO -->
         <div class="sidebar_profile flex">
           <span class="nav_image">
-            <img src="images/profile.jpeg" alt="logo_img" />
+            <img src="images/profile.png" alt="logo_img" />
           </span>
           <div class="data_text">
-            <span class="email">victor@motion.com</span>
+            <span class="email"><?php echo $_SESSION["usuario"]["email"]?></span>
           </div>
         </div>
       </div>
     </nav>
       </div>
-      <nav class="navbar flex">
-        <i class="bx bx-menu" id="sidebar-open"></i>
-        <input type="text" placeholder="Buscar..." class="search_box" />
-        <div>
-          <button class="button">Pesquisar</button>
-        </div>
-      </nav>
+    </nav>
 
     <!-- Site -->
     <div>
-      <h1 class="display-2">Controle de Colaboradores</h1>
+      <h1 class="display-2">Controle de Clientes</h1>
       <div class="card">
         <div class="col">
           <div class="row">
-            <h2 class="mr-2">Cadastros de colaboradores</h2>
+                <h2 class="mr-2">Tabela de Clientes</h2>
           </div>
         </div>
         <div class="col m-3">
-          <button class="button" onclick="window.location.href='/cervejaria/cadastro-de-funcionarios/'">Cadastrar +</button>
+          <button class="button">Casdatrar +</button>
       </div>
       </div>
       
@@ -154,7 +135,7 @@
             <tr>
               <th>Nome</th>
               <th>Sobernome</th>
-              <th>Cpf/Cnpj</th>
+              <th>Cpf/Cnpf</th>
               <th>Data</th>
               <th>Tipo</th>
               <th>Endereço</th>

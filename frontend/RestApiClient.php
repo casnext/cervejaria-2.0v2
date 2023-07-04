@@ -8,7 +8,7 @@ use Psr\Http\Message\ResponseInterface;
 
 class RestApiClient
 {
-  private $base_url = "https://host.docker.internal:65258/api";
+  private $base_url = "http://host.docker.internal:65257/api";
   private $client;
 
   public function __construct()

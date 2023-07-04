@@ -236,10 +236,10 @@
        <!-- RODAPE USUARIO -->
         <div class="sidebar_profile flex">
           <span class="nav_image">
-            <img src="images/profile.jpeg" alt="logo_img" />
+            <img src="images/profile.png" alt="logo_img" />
           </span>
           <div class="data_text">
-            <span class="email">victor@motion.com</span>
+            <span class="email"><?php echo $_SESSION["usuario"]["email"]?></span>
           </div>
         </div>
       </div>
@@ -248,49 +248,39 @@
     </nav>
     <!-- Cabeçalho -->
     <div>
-      <h1 class="display-2">Acompanhar Processo </h1>
+      <h1 class="display-2">Controle de vendas </h1>
       <div class="card">
         <div class="container">
           <div class="row">
             <div class="col  m-2">
-              <h2>Avançar etapa</h2>
+              <h2>Cadastro de Vendas</h2>
             </div>
               <div class="mb-5">
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nº Ordem Produção">
+                <input type="text" class="form-control" value="" id="exampleFormControlInput1" placeholder="Nome do Cliente">
+              </div>
+              <div class="mb-3">
+                <input type="number" class="form-control" value="" id="exampleFormControlInput1" placeholder="Digite seu Cpf/Cnpj">
               </div>
               <div class="mb-5">
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome do Responsável" readonly>
+                <input type="number" class="form-control" value="" id="exampleFormControlInput1" placeholder="Digite o quantidade de engradados">
               </div>
               <div class="mb-5">
-                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Quantidade">
+                <input type="text" class="form-control" value="" id="exampleFormControlInput1" placeholder="Valor" readonly>
               </div>
-              <div class="mb-5">
-                <div class="col m-2">
-                  <select class="form-select">
-                    <option selected>Selecione proxima etapa</option>
-                    <option value="opcao1">Maltagem</option>
-                    <option value="opcao2">Moagem</option>
-                    <option value="opcao3">Brassagem</option>
-                    <option value="opcao1">Filtração</option>
-                    <option value="opcao2">Fervura</option>
-                    <option value="opcao3">Clarificação</option>
-                    <option value="opcao3">Engarrafamento</option>
-                    <option value="opcao3">Expedição</option>
-                  </select>
-                </div>
-              </div>
+            
               <div class="mb-5">
                 <div class="col m-2">
                   <select class="form-select">
-                    <option selected>Selecione um motivo</option>
-                    <option value="opcao1">Transferência de setor</option>
-                    <option value="opcao2">Correção de transferência</option>
-                    <option value="opcao3">Retroceder (retrabalho) processo</option>
-                    <option value="opcao1">Avançar processo não ultilizado</option>
+                    <option selected>Selecione Categoria</option>
+                    <option value="opcao1">PILSEN(300ML)</option>
+                    <option value="opcao2">DUPLO MALTE(300ML)</option>
+                    <option value="opcao3">SEM ALCOOL(300ML)</option>
+                    <option value="opcao1">PILSEN(550ML)</option>
+                    <option value="opcao2">DUPLO MALTE(550ML)</option>
+                    <option value="opcao3">SEM ALCOOL(550ML)</option>
                   </select>
                 </div>
               </div>
-  
               <div class="mb-5">
                 <input type="text" class="form-control1" id="exampleFormControlInput1" placeholder="Observação">
               </div>
